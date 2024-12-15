@@ -14,7 +14,7 @@ const Page = () => {
 
   useEffect(() => {
     // Initialize the socket connection
-    socketRef.current = io("http://localhost:8000");
+    socketRef.current = io(process.env.BACKEND_URL);
 
     return () => {
       // Clean up the socket connection on unmount

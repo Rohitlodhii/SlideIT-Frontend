@@ -13,7 +13,7 @@ export default function ScreenPage() {
   let socket : any;
 
   useEffect(() => {
-    socket = io('http://localhost:8000'); 
+    socket = io(process.env.BACKEND_URL); 
     // Listen for data from the backend
     socket.on('screen_data', (data :any) => {
       console.log('Data received on screen:', data);
